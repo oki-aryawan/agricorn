@@ -8,7 +8,6 @@
 - Google Colab
 - PyQT5
 
-
 ## Instalation
 - Firstly create virtualenvironment then activate and install the dependencies
 
@@ -30,6 +29,7 @@ CUDA 10.2
 ```
 pip install torch==1.12.1+cu102 torchvision==0.13.1+cu102 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu102
 ```
+
 
 - Install from `requirements.txt`
 
