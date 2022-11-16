@@ -7,16 +7,17 @@ import torch
 import cv2
 from PIL import Image
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='agricorn.pt')
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt')
 
 
 class Agricorn(QMainWindow):
     def __init__(self):
         super(Agricorn, self).__init__()
-        loadUi("start.ui", self)
+        loadUi("start3.ui", self)
 
-        self.Started.clicked.connect(self.gotodashboard)
-        # self.AboutUs.clicked.connect (self.gotoaboutus)
+        self.started.clicked.connect(self.gotodashboard)
+        #self.about_us.clicked.connect (self.gotoaboutus)
+
 
     def gotodashboard(self):
         halamanutama = Dashboard()
@@ -32,9 +33,11 @@ class Agricorn(QMainWindow):
 class Dashboard(QMainWindow):
     def __init__(self):
         super(Dashboard, self).__init__()
-        loadUi("dashboard.ui", self)
+        loadUi("dashboard3.ui", self)
 
-        self.InputImage.clicked.connect(self.uploadfoto)
+        self.UploadImage.clicked.connect(self.uploadfoto)
+        #self.Kembali.clicked.connect(self.Agricorn)
+
 
     def uploadfoto(self):
         namaf = QFileDialog.getOpenFileName(self, 'Pilih file gambar', 'c:')
@@ -55,7 +58,7 @@ class Dashboard(QMainWindow):
 class AboutUs(QMainWindow):
     def __init__(self):
         super(AboutUs, self).__init__()
-        loadUi("window_about.ui", self)
+        loadUi("window_about2.ui", self)
 
         # self.Kembali.clicked.connect (self.gotohomepage)
 

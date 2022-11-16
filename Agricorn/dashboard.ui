@@ -52,7 +52,7 @@ border: 1px solid black
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="InputImage">
+   <widget class="QPushButton" name="UploadImage">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -200,7 +200,7 @@ border: 1px solid black
     </property>
    </widget>
    <zorder>img_bg</zorder>
-   <zorder>InputImage</zorder>
+   <zorder>UploadImage</zorder>
    <zorder>le_percentage</zorder>
    <zorder>label_</zorder>
    <zorder>le_plantinfo</zorder>
