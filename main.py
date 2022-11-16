@@ -7,7 +7,7 @@ model = torch.hub.load('ultralytics/yolov5', 'custom', path='Agricorn/agricorn.p
 img = 'data/zsehat6.jpg'
 
 result = model(img, size=640)
-result.save(save_dir='result/', filename='result.png')
+result.save(save_dir='result/', filename='result.jpg')
 
 print(result.xyxy[0])
 print(result.pandas().xyxy[0])

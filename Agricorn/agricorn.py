@@ -7,8 +7,8 @@ import torch
 import cv2
 from PIL import Image
 
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='agricorn.pt')
 
-#model = torch.hub.load('ultralytics/yolov5', 'custom', path='agricorn.pt')
 
 class Agricorn(QMainWindow):
     def __init__(self):
@@ -38,7 +38,18 @@ class Dashboard(QMainWindow):
 
     def uploadfoto(self):
         namaf = QFileDialog.getOpenFileName(self, 'Pilih file gambar', 'c:')
-        #self.image.setPixmap(QtGui.QPixmap('Corn_Blight (118).jpg'))
+        filename = namaf[0].split('/')[-1]
+        result = model(namaf[0], size=640)
+        result.save(save_dir='result/')
+        img = cv2.imread(f'result/{filename}', cv2.IMREAD_UNCHANGED)
+        print(result.pandas().xyxy[0])
+
+        h = 631
+        w = 491
+        s = (h, w)
+        resized = cv2.resize(img, s, interpolation=cv2.INTER_AREA)
+        cv2.imwrite('result2.jpg', resized)
+        self.image.setPixmap(QtGui.QPixmap('result2.jpg'))
 
 
 class AboutUs(QMainWindow):
