@@ -7,13 +7,13 @@ import torch
 import cv2
 from PIL import Image
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt')
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='model/best.pt')
 
 
 class Agricorn(QMainWindow):
     def __init__(self):
         super(Agricorn, self).__init__()
-        loadUi("start3.ui", self)
+        loadUi("ui/start3.ui", self)
 
         self.started.clicked.connect(self.gotodashboard)
         #self.about_us.clicked.connect (self.gotoaboutus)
@@ -33,7 +33,7 @@ class Agricorn(QMainWindow):
 class Dashboard(QMainWindow):
     def __init__(self):
         super(Dashboard, self).__init__()
-        loadUi("dashboard3.ui", self)
+        loadUi("ui/dashboard3.ui", self)
 
         self.UploadImage.clicked.connect(self.uploadfoto)
         #self.Kembali.clicked.connect(self.Agricorn)
@@ -58,7 +58,7 @@ class Dashboard(QMainWindow):
 class AboutUs(QMainWindow):
     def __init__(self):
         super(AboutUs, self).__init__()
-        loadUi("window_about2.ui", self)
+        loadUi("ui/window_about2.ui", self)
 
         # self.Kembali.clicked.connect (self.gotohomepage)
 
