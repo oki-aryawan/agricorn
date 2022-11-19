@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgba(255, 255, 255, 200);
+     <string notr="true">background-color: rgb(255, 255, 255);
 border-top-left-radius : 10px;
 border-top-right-radius : 10px; 
 border-bottom-left-radius : 10px; 
@@ -38,6 +38,9 @@ border: 1px solid black
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>asset/WhatsApp Image 2022-11-08 at 12.44.03 PM.jpeg</pixmap>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -52,7 +55,7 @@ border: 1px solid black
    <widget class="QPushButton" name="UploadImage">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>270</x>
       <y>520</y>
       <width>151</width>
       <height>41</height>
@@ -60,6 +63,7 @@ border: 1px solid black
     </property>
     <property name="font">
      <font>
+      <weight>50</weight>
       <bold>false</bold>
      </font>
     </property>
@@ -85,7 +89,7 @@ Text-align:right
     <property name="geometry">
      <rect>
       <x>710</x>
-      <y>90</y>
+      <y>80</y>
       <width>121</width>
       <height>21</height>
      </rect>
@@ -112,14 +116,15 @@ color: rgb(0, 0, 0)</string>
    <widget class="QLabel" name="label_">
     <property name="geometry">
      <rect>
-      <x>737</x>
-      <y>60</y>
-      <width>71</width>
+      <x>720</x>
+      <y>50</y>
+      <width>101</width>
       <height>16</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -128,21 +133,20 @@ color: rgb(0, 0, 0)</string>
 color: rgb(0, 0, 0)</string>
     </property>
     <property name="text">
-     <string>Prediction</string>
+     <string>Plant Condition</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="le_plantinfo">
     <property name="geometry">
      <rect>
       <x>670</x>
-      <y>130</y>
+      <y>120</y>
       <width>211</width>
-      <height>381</height>
+      <height>391</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgba(255, 255, 255, 200);
-border-top-left-radius : 10px;
+     <string notr="true">border-top-left-radius : 10px;
 border-top-right-radius : 10px; 
 border-bottom-left-radius : 10px; 
 border-bottom-right-radius : 10px;
@@ -160,7 +164,7 @@ border: 1px solid black
    <widget class="QLabel" name="img_upld">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>290</x>
       <y>530</y>
       <width>21</width>
       <height>21</height>
@@ -195,137 +199,13 @@ border: 1px solid black
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="SaveImage">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>520</y>
-      <width>151</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border:1px solid black; 
-border-top-left-radius : 10px;
-border-top-right-radius : 10px; 
-border-bottom-left-radius : 10px; 
-border-bottom-right-radius : 10px;
-background-color: white;
-color: rgb(0, 0, 0);
-Text-align:right
-</string>
-    </property>
-    <property name="text">
-     <string>Save Image       </string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="img_save">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>530</y>
-      <width>21</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>asset/download_icon.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="img_bgup2">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>200</y>
-      <width>151</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>asset/photoimg.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="img_back">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>533</y>
-      <width>15</width>
-      <height>15</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: transparent</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>asset/back.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Kembali2">
-    <property name="geometry">
-     <rect>
-      <x>545</x>
-      <y>525</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border:1px solid black; 
-border-top-left-radius : 10px;
-border-top-right-radius : 10px; 
-border-bottom-left-radius : 10px; 
-border-bottom-right-radius : 10px;
-background-color: white;
-color: rgb(0, 0, 0);
-</string>
-    </property>
-    <property name="text">
-     <string>        Menu</string>
-    </property>
-   </widget>
    <zorder>img_bg</zorder>
-   <zorder>img_bgup2</zorder>
    <zorder>UploadImage</zorder>
    <zorder>le_percentage</zorder>
    <zorder>label_</zorder>
    <zorder>le_plantinfo</zorder>
    <zorder>img_upld</zorder>
    <zorder>image</zorder>
-   <zorder>SaveImage</zorder>
-   <zorder>img_save</zorder>
-   <zorder>Kembali2</zorder>
-   <zorder>img_back</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
