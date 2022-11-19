@@ -10,6 +10,9 @@ from PIL import Image
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='model/best.pt')
 
 
+hawar = 'memusnahkan tanaman dengan cara membakar keseluruhan batang jagung yang terinfeksi penyakit hawar serta menyemprotkan fungisida yang memiliki kandungan aktif mankozeb atau dithiocarbamate'
+
+
 class Agricorn(QMainWindow):
     def __init__(self):
         super(Agricorn, self).__init__()
@@ -44,6 +47,7 @@ class Dashboard(QMainWindow):
         result.save(save_dir='result/')
         deteksi = result.pandas().xyxy[0].to_dict()
         deteksi = deteksi["name"][0]
+        deteksi = str(deteksi)
         print(deteksi)
         img = cv2.imread(f'result/{filename}', cv2.IMREAD_UNCHANGED)
 
@@ -54,7 +58,10 @@ class Dashboard(QMainWindow):
         cv2.imwrite('result2.jpg', resized)
         self.image.setPixmap(QtGui.QPixmap('result2.jpg'))
 
-        self.hasil.setText(deteksi)
+        self.hasil.setText(deteksi.upper())
+
+        if deteksi == 'hawar':
+            self.penanganan.setText(hawar)
 
     def gotostart(self):
         startwindow = Agricorn()
