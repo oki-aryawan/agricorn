@@ -60,6 +60,7 @@ border: 1px solid black
     </property>
     <property name="font">
      <font>
+      <weight>50</weight>
       <bold>false</bold>
      </font>
     </property>
@@ -81,80 +82,31 @@ Text-align:right
      <string>Upload Image    </string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="le_percentage">
-    <property name="geometry">
-     <rect>
-      <x>710</x>
-      <y>90</y>
-      <width>121</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <italic>true</italic>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border:0.5px solid black; 
-
-background-color: rgb(255, 255, 255);
-
-color: rgb(0, 0, 0)</string>
-    </property>
-    <property name="text">
-     <string>Unknown %</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_">
     <property name="geometry">
      <rect>
-      <x>737</x>
+      <x>677</x>
       <y>60</y>
-      <width>71</width>
-      <height>16</height>
+      <width>191</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: transparent;
-color: rgb(0, 0, 0)</string>
+color: rgb(0, 0, 0);
+Text-align:center;</string>
     </property>
     <property name="text">
-     <string>Prediction</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="le_plantinfo">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>130</y>
-      <width>211</width>
-      <height>381</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(255, 255, 255, 200);
-border-top-left-radius : 10px;
-border-top-right-radius : 10px; 
-border-bottom-left-radius : 10px; 
-border-bottom-right-radius : 10px;
-border: 1px solid black
-
-</string>
-    </property>
-    <property name="text">
-     <string>Here Text Here Text Here Text Here Text</string>
+     <string>Disease Prediction</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="img_upld">
@@ -206,6 +158,7 @@ border: 1px solid black
     </property>
     <property name="font">
      <font>
+      <weight>50</weight>
       <bold>false</bold>
      </font>
     </property>
@@ -272,10 +225,10 @@ Text-align:right
    <widget class="QLabel" name="img_back">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>533</y>
-      <width>15</width>
-      <height>15</height>
+      <x>620</x>
+      <y>530</y>
+      <width>20</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -291,12 +244,12 @@ Text-align:right
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="Kembali2">
+   <widget class="QPushButton" name="Kembali">
     <property name="geometry">
      <rect>
-      <x>545</x>
+      <x>605</x>
       <y>525</y>
-      <width>91</width>
+      <width>131</width>
       <height>31</height>
      </rect>
     </property>
@@ -308,24 +261,98 @@ border-bottom-left-radius : 10px;
 border-bottom-right-radius : 10px;
 background-color: white;
 color: rgb(0, 0, 0);
+Text-align:center;
 </string>
     </property>
     <property name="text">
-     <string>        Menu</string>
+     <string>       Kembali</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="hasil">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>90</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Unknown</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="penanganan">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>170</y>
+      <width>221</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_1">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>140</y>
+      <width>191</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+color: rgb(0, 0, 0);
+Text-align:center;</string>
+    </property>
+    <property name="text">
+     <string>Action</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <zorder>img_bg</zorder>
    <zorder>img_bgup2</zorder>
    <zorder>UploadImage</zorder>
-   <zorder>le_percentage</zorder>
    <zorder>label_</zorder>
-   <zorder>le_plantinfo</zorder>
    <zorder>img_upld</zorder>
    <zorder>image</zorder>
    <zorder>SaveImage</zorder>
    <zorder>img_save</zorder>
-   <zorder>Kembali2</zorder>
+   <zorder>Kembali</zorder>
    <zorder>img_back</zorder>
+   <zorder>hasil</zorder>
+   <zorder>penanganan</zorder>
+   <zorder>label_1</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
