@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Agricorn</class>
+ <widget class="QMainWindow" name="Agricorn">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(234, 255, 239);
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="Kembali">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>20</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid black; 
+border-top-left-radius : 10px;
+border-top-right-radius : 10px; 
+border-bottom-left-radius : 10px; 
+border-bottom-right-radius : 10px;
+background-color: transparent;
+color: rgb(0, 0, 0);
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="img_back">
+    <property name="geometry">
+     <rect>
+      <x>845</x>
+      <y>25</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>asset/back.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>img_back</zorder>
+   <zorder>Kembali</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
