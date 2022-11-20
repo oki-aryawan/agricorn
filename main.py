@@ -64,7 +64,7 @@ class Dashboard(QMainWindow):
         self.hasil.setText(deteksi.upper())
 
         if deteksi == 'hawar':
-            self.penanganan.setText(hawar)
+            self.penanganan.setText('')
 
     def SimpanGambar(self):
         if self._filename and not self.imageViewer.image().isNull():
