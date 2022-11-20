@@ -41,4 +41,8 @@ Install pytorch with CUDA [here](https://pytorch.org/get-started/previous-versio
 ```
 pip install -r requirements.txt
 ```
+- Run `main.py`
+```
+python main.py
+```
 
