@@ -1,3 +1,6 @@
+
+<a href="https://colab.research.google.com/drive/1OhJ1b5R36eMr4a_Y3H9UuPMwDAMxFE6F?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+
 # Agricorn
 <p align="center">
   <img src="docs/logo.PNG" align="middle" width = "500" />
@@ -9,13 +12,13 @@ Agricorn is a desktop application that functions to detect diseases in corn plan
 - Putu Oki Wiradita Aryawan F1401211054
 - Muhammad Syauqi Arham F1401211085
 
-
 ## Tech Stack
 - PyTorch
 - YOLOv5
 - OpenCV
-- Google Colab
 - PyQT5
+- Google Colab
+- Roboflow
 
 ## Instalation
 - Firstly create virtualenvironment then activate and install the dependencies
