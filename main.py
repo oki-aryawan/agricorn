@@ -1,4 +1,6 @@
 import sys
+import os
+import PIL.Image
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow, QDialog, QApplication, QFileDialog
 from PyQt5.uic import loadUi
@@ -39,6 +41,7 @@ class Dashboard(QMainWindow):
 
         self.UploadImage.clicked.connect(self.uploadfoto)
         self.Kembali.clicked.connect(self.gotostart)
+        self.SaveImage.clicked.connect(self.SimpanGambar)
 
     def uploadfoto(self):
         namaf = QFileDialog.getOpenFileName(self, 'Pilih file gambar', 'c:')
@@ -62,6 +65,22 @@ class Dashboard(QMainWindow):
 
         if deteksi == 'hawar':
             self.penanganan.setText(hawar)
+
+    def SimpanGambar(self):
+        if self._filename and not self.imageViewer.image().isNull():
+            filename = os.path.splitext(self._filename)[0] + ".png"
+        else:
+            filename = 'image.png'
+        filename = QFileDialog.getSaveFileName(self,
+                                               _("Save Image As"), filename)[0]
+        if filename:
+            if not self.imageViewer.image().save(filename):
+                QMessageBox.critical(self, _("Error"), _(
+                    "Could not save the image."))
+            else:
+                self.fileDragger.currentFile = filename
+
+
 
     def gotostart(self):
         startwindow = Agricorn()
