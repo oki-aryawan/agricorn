@@ -46,25 +46,29 @@ class Dashboard(QMainWindow):
     def uploadfoto(self):
         namaf = QFileDialog.getOpenFileName(self, 'Pilih file gambar', 'c:')
         filename = namaf[0].split('/')[-1]
-        result = model(namaf[0], size=640)
-        result.save(save_dir='result/')
-        deteksi = result.pandas().xyxy[0].to_dict()
-        deteksi = deteksi["name"][0]
-        deteksi = str(deteksi)
-        print(deteksi)
-        img = cv2.imread(f'result/{filename}', cv2.IMREAD_UNCHANGED)
+        if filename:
+            result = model(namaf[0], size=640)
+            result.save(save_dir='result/')
+            deteksi = result.pandas().xyxy[0].to_dict()
+            deteksi = deteksi["name"][0]
+            deteksi = str(deteksi)
+            print(deteksi)
+            img = cv2.imread(f'result/{filename}', cv2.IMREAD_UNCHANGED)
 
-        h = 631
-        w = 491
-        s = (h, w)
-        resized = cv2.resize(img, s, interpolation=cv2.INTER_AREA)
-        cv2.imwrite('result2.jpg', resized)
-        self.image.setPixmap(QtGui.QPixmap('result2.jpg'))
+            h = 631
+            w = 491
+            s = (h, w)
+            resized = cv2.resize(img, s, interpolation=cv2.INTER_AREA)
+            cv2.imwrite('result2.jpg', resized)
+            self.image.setPixmap(QtGui.QPixmap('result2.jpg'))
 
-        self.hasil.setText(deteksi.upper())
+            self.hasil.setText(deteksi.upper())
 
-        if deteksi == 'hawar':
-            self.penanganan.setText('')
+            if deteksi == 'hawar':
+                self.penanganan.setText('')
+
+        else:
+            pass
 
     def SimpanGambar(self):
         if self._filename and not self.imageViewer.image().isNull():
