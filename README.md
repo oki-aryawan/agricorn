@@ -45,4 +45,8 @@ pip install -r requirements.txt
 ```
 python main.py
 ```
-
+## Display
+<p align="center">
+  <img src="docs/start.PNG" align="middle" width = "500" />
+  <img src="docs/dashboard.PNG" align="middle" width = "500" />
+</p>
