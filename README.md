@@ -6,6 +6,7 @@
   <img src="docs/logo.PNG" align="middle" width = "500" />
 </p>
 Agricorn is a desktop application that functions to detect diseases in corn plant leaves. This app is based on Python with PyQt5 and uses the YOLOv5 deep learning algorithm. This app created by Group 3 as a final project in programming course, Mechanical and Biosystem Engineering, IPB.
+
 - Fadillah Fajrisani F1401211014
 - Muhammad Nibroos Abrar F1401211027
 - Fareihan Rizki Farikhin F1401211050
