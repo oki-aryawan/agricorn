@@ -147,58 +147,6 @@ Text-align:center;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="SaveImage">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>520</y>
-      <width>151</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border:1px solid black; 
-border-top-left-radius : 10px;
-border-top-right-radius : 10px; 
-border-bottom-left-radius : 10px; 
-border-bottom-right-radius : 10px;
-background-color: white;
-color: rgb(0, 0, 0);
-Text-align:right
-</string>
-    </property>
-    <property name="text">
-     <string>Save Image       </string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="img_save">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>530</y>
-      <width>21</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>asset/download_icon.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QLabel" name="img_bgup2">
     <property name="geometry">
      <rect>
@@ -225,7 +173,7 @@ Text-align:right
    <widget class="QLabel" name="img_back">
     <property name="geometry">
      <rect>
-      <x>620</x>
+      <x>400</x>
       <y>530</y>
       <width>20</width>
       <height>20</height>
@@ -247,10 +195,10 @@ Text-align:right
    <widget class="QPushButton" name="Kembali">
     <property name="geometry">
      <rect>
-      <x>605</x>
-      <y>525</y>
+      <x>380</x>
+      <y>520</y>
       <width>131</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -346,8 +294,6 @@ Text-align:center;</string>
    <zorder>label_</zorder>
    <zorder>img_upld</zorder>
    <zorder>image</zorder>
-   <zorder>SaveImage</zorder>
-   <zorder>img_save</zorder>
    <zorder>Kembali</zorder>
    <zorder>img_back</zorder>
    <zorder>hasil</zorder>

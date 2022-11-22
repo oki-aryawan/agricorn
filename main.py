@@ -1,15 +1,13 @@
 import sys
 import os
-import PIL.Image
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow, QDialog, QApplication, QFileDialog, QMenu
 from PyQt5.uic import loadUi
 from PyQt5 import QtGui
 import torch
 import cv2
-from PIL import Image
 
-#model = torch.hub.load('ultralytics/yolov5', 'custom', path='model/best.pt')
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='model/best-2.pt')
 
 
 class Agricorn(QMainWindow):
@@ -34,66 +32,38 @@ class Agricorn(QMainWindow):
 class Dashboard(QMainWindow):
     def __init__(self):
         super(Dashboard, self).__init__()
-        self.le = None
         loadUi("ui/dashboard.ui", self)
 
         self.UploadImage.clicked.connect(self.uploadfoto)
         self.Kembali.clicked.connect(self.gotostart)
-        self.SaveImage.clicked.connect(self.SimpanGambar)
 
     def uploadfoto(self):
         namaf = QFileDialog.getOpenFileName(self, 'Pilih file gambar', 'c:')
         filename = namaf[0].split('/')[-1]
         if filename:
-            #result = model(namaf[0], size=640)
-            #result.save(save_dir='result/')
-            #deteksi = result.pandas().xyxy[0].to_dict()
-            #deteksi = deteksi["name"][0]
-            #deteksi = str(deteksi)
-            #print(deteksi)
-            #img = cv2.imread(f'result/{filename}', cv2.IMREAD_UNCHANGED)
+            result = model(namaf[0], size=640)
+            result.save(save_dir='result/')
+            deteksi = result.pandas().xyxy[0].to_dict()
+            deteksi = deteksi["name"][0]
+            deteksi = str(deteksi)
+            print(deteksi)
+            img = cv2.imread(f'result/{filename}', cv2.IMREAD_UNCHANGED)
 
             h = 631
             w = 491
             s = (h, w)
-            #resized = cv2.resize(img, s, interpolation=cv2.INTER_AREA)
-            #cv2.imwrite('result2.jpg', resized)
+            global resized
+            resized = cv2.resize(img, s, interpolation=cv2.INTER_AREA)
+            cv2.imwrite('result2.jpg', resized)
             self.image.setPixmap(QtGui.QPixmap('result2.jpg'))
 
-            #self.hasil.setText(deteksi.upper())
+            self.hasil.setText(deteksi.upper())
 
             #if deteksi == 'hawar':
                 #self.penanganan.setPixmap(QtGui.QPixmap())
 
         else:
             pass
-
-    def SimpanGambar(self, event=None):
-        cmenu = QMenu(self)
-        saveAct = cmenu.addAction("Save as")
-        action = cmenu.exec_(self.mapToGlobal(event.pos()))
-        if action == saveAct:
-            filename, _ = QFileDialog.getSaveFileName(self)
-            pixmap = self.le.pixmap()
-            if pixmap is not None and filename:
-                pixmap.save(filename)
-
-
-        '''
-        if self._filename and not self.imageViewer.image().isNull():
-            filename = os.path.splitext(self._filename)[0] + ".png"
-        else:
-            filename = 'image.png'
-        filename = QFileDialog.getSaveFileName(self,
-                                               _("Save Image As"), filename)[0]
-        if filename:
-            if not self.imageViewer.image().save(filename):
-                QMessageBox.critical(self, _("Error"), _(
-                    "Could not save the image."))
-            else:
-                self.fileDragger.currentFile = filename
-        '''
-
 
 
     def gotostart(self):
