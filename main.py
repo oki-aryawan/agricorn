@@ -37,6 +37,7 @@ class Dashboard(QMainWindow):
         self.UploadImage.clicked.connect(self.uploadfoto)
         self.Kembali.clicked.connect(self.gotostart)
 
+
     def uploadfoto(self):
         namaf = QFileDialog.getOpenFileName(self, 'Pilih file gambar', 'c:')
         filename = namaf[0].split('/')[-1]
