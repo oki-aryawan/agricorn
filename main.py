@@ -101,14 +101,8 @@ class AboutUs(QMainWindow):
 
 app = QApplication(sys.argv)
 mainwindow = Agricorn()
-halamanutama = Dashboard()
-halamandepan = Agricorn()
-aboutwindow = AboutUs()
 widget = QtWidgets.QStackedWidget()
 widget.addWidget(mainwindow)
-widget.addWidget(halamandepan)
-widget.addWidget(halamanutama)
-widget.addWidget(aboutwindow)
 # Setingan Width dan Height untuk Fullscreen
 # widget.setFixedWidth(1920)
 # widget.setFixedHeight(1000)
