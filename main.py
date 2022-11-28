@@ -7,7 +7,7 @@ from PyQt5 import QtGui
 import torch
 import cv2
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='model/best-2.pt')
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='model/best-3.pt')
 
 
 class Agricorn(QMainWindow):
