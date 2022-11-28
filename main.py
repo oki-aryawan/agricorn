@@ -66,6 +66,7 @@ class Dashboard(QMainWindow):
 
             else:
                 print('Result is empty')
+                self.hasil.setText('Unknown')
                 self.penanganan.setPixmap(QtGui.QPixmap('data/error.png'))
 
             img = cv2.imread(f'result/{filename}', cv2.IMREAD_UNCHANGED)
