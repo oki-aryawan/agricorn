@@ -38,7 +38,6 @@ class Dashboard(QMainWindow):
         self.UploadImage.clicked.connect(self.uploadfoto)
         self.Kembali.clicked.connect(self.gotostart)
 
-
     def uploadfoto(self):
         namaf = QFileDialog.getOpenFileName(self, 'Pilih file gambar', 'c:')
         filename = namaf[0].split('/')[-1]
@@ -46,20 +45,14 @@ class Dashboard(QMainWindow):
             result = model(namaf[0], size=640)
             result.save(save_dir='result/')
             deteksi = result.pandas().xyxy[0].to_dict()
-            if deteksi:
+            print(deteksi)
+            print(len(deteksi["name"]))
+            if len(deteksi["name"]) != 0:
+                print('Result is not empty')
+                print(deteksi)
                 deteksi = deteksi["name"][0]
                 deteksi = str(deteksi)
                 print(deteksi)
-                img = cv2.imread(f'result/{filename}', cv2.IMREAD_UNCHANGED)
-
-                h = 631
-                w = 491
-                s = (h, w)
-                global resized
-                resized = cv2.resize(img, s, interpolation=cv2.INTER_AREA)
-                cv2.imwrite('result2.jpg', resized)
-                self.image.setPixmap(QtGui.QPixmap('result2.jpg'))
-
                 self.hasil.setText(deteksi.upper())
 
                 if deteksi == 'hawar':
@@ -70,12 +63,21 @@ class Dashboard(QMainWindow):
 
                 elif deteksi == 'bercak':
                     self.penanganan.setPixmap(QtGui.QPixmap('data/bercak.png'))
+
             else:
-                pass
+                print('Result is empty')
+                self.penanganan.setPixmap(QtGui.QPixmap('data/error.png'))
+
+            img = cv2.imread(f'result/{filename}', cv2.IMREAD_UNCHANGED)
+            h = 631
+            w = 491
+            s = (h, w)
+            resized = cv2.resize(img, s, interpolation=cv2.INTER_AREA)
+            cv2.imwrite('result2.jpg', resized)
+            self.image.setPixmap(QtGui.QPixmap('result2.jpg'))
 
         else:
             pass
-
 
     def gotostart(self):
         startwindow = Agricorn()
