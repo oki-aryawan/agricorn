@@ -32,6 +32,7 @@ class Agricorn(QMainWindow):
 class Dashboard(QMainWindow):
     def __init__(self):
         super(Dashboard, self).__init__()
+        self.penanganan = None
         loadUi("ui/dashboard.ui", self)
 
         self.UploadImage.clicked.connect(self.uploadfoto)
@@ -45,23 +46,32 @@ class Dashboard(QMainWindow):
             result = model(namaf[0], size=640)
             result.save(save_dir='result/')
             deteksi = result.pandas().xyxy[0].to_dict()
-            deteksi = deteksi["name"][0]
-            deteksi = str(deteksi)
-            print(deteksi)
-            img = cv2.imread(f'result/{filename}', cv2.IMREAD_UNCHANGED)
+            if deteksi:
+                deteksi = deteksi["name"][0]
+                deteksi = str(deteksi)
+                print(deteksi)
+                img = cv2.imread(f'result/{filename}', cv2.IMREAD_UNCHANGED)
 
-            h = 631
-            w = 491
-            s = (h, w)
-            global resized
-            resized = cv2.resize(img, s, interpolation=cv2.INTER_AREA)
-            cv2.imwrite('result2.jpg', resized)
-            self.image.setPixmap(QtGui.QPixmap('result2.jpg'))
+                h = 631
+                w = 491
+                s = (h, w)
+                global resized
+                resized = cv2.resize(img, s, interpolation=cv2.INTER_AREA)
+                cv2.imwrite('result2.jpg', resized)
+                self.image.setPixmap(QtGui.QPixmap('result2.jpg'))
 
-            self.hasil.setText(deteksi.upper())
+                self.hasil.setText(deteksi.upper())
 
-            #if deteksi == 'hawar':
-                #self.penanganan.setPixmap(QtGui.QPixmap())
+                if deteksi == 'hawar':
+                    self.penanganan.setPixmap(QtGui.QPixmap('data/hawar.png'))
+
+                elif deteksi == 'karat':
+                    self.penanganan.setPixmap(QtGui.QPixmap('data/karat.png'))
+
+                elif deteksi == 'bercak':
+                    self.penanganan.setPixmap(QtGui.QPixmap('data/bercak.png'))
+            else:
+                pass
 
         else:
             pass
