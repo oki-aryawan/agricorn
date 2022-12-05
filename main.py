@@ -1,13 +1,12 @@
 import sys
-import os
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMainWindow, QDialog, QApplication, QFileDialog, QMenu
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog
 from PyQt5.uic import loadUi
 from PyQt5 import QtGui
 import torch
 import cv2
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='model/best-3.pt')
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='model/best-6.pt')
 
 
 class Agricorn(QMainWindow):
@@ -101,17 +100,8 @@ class AboutUs(QMainWindow):
 
 app = QApplication(sys.argv)
 mainwindow = Agricorn()
-halamanutama = Dashboard()
-halamandepan = Agricorn()
-aboutwindow = AboutUs()
 widget = QtWidgets.QStackedWidget()
 widget.addWidget(mainwindow)
-widget.addWidget(halamandepan)
-widget.addWidget(halamanutama)
-widget.addWidget(aboutwindow)
-# Setingan Width dan Height untuk Fullscreen
-# widget.setFixedWidth(1920)
-# widget.setFixedHeight(1000)
 widget.setFixedWidth(911)
 widget.setFixedHeight(600)
 widget.show()

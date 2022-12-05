@@ -1,6 +1,6 @@
 import torch
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='model/best-2.pt')
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='model/best-5.pt')
 x = 0
 
 while x <= 9:
