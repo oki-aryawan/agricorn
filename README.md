@@ -47,6 +47,8 @@ python main.py
 ```
 ## Display
 <p align="center">
-  <img src="docs/start.PNG" align="middle" width = "500" />
-  <img src="docs/dashboard.PNG" align="middle" width = "500" />
+  <img src="docs/start.PNG" align="middle" width = "700" />
+</p>
+<p align="center">
+  <img src="docs/dashboard.PNG" align="middle" width = "700" />
 </p>
