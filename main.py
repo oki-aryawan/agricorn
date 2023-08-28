@@ -31,8 +31,9 @@ class Agricorn(QMainWindow):
 class Dashboard(QMainWindow):
     def __init__(self):
         super(Dashboard, self).__init__()
+        self.jumlah = None
         self.penanganan = None
-        loadUi("ui/dashboard.ui", self)
+        loadUi("ui/dashboard2.ui", self)
 
         self.UploadImage.clicked.connect(self.uploadfoto)
         self.Kembali.clicked.connect(self.gotostart)
@@ -44,8 +45,9 @@ class Dashboard(QMainWindow):
             result = model(namaf[0], size=640)
             result.save(save_dir='result/')
             deteksi = result.pandas().xyxy[0].to_dict()
-            print(deteksi)
+            #print(deteksi)
             print(len(deteksi["name"]))
+            jumlah = len(deteksi["name"])
             if len(deteksi["name"]) != 0:
                 print('Result is not empty')
                 print(deteksi)
@@ -53,6 +55,7 @@ class Dashboard(QMainWindow):
                 deteksi = str(deteksi)
                 print(deteksi)
                 self.hasil.setText(deteksi.upper())
+                self.jumlah.setText(str(jumlah))
 
                 if deteksi == 'hawar':
                     self.penanganan.setPixmap(QtGui.QPixmap('data/hawar.png'))
@@ -66,6 +69,7 @@ class Dashboard(QMainWindow):
             else:
                 print('Result is empty')
                 self.hasil.setText('Unknown')
+                self.jumlah.setText('Null')
                 self.penanganan.setPixmap(QtGui.QPixmap('data/error.png'))
 
             img = cv2.imread(f'result/{filename}', cv2.IMREAD_UNCHANGED)
